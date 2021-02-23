@@ -1,0 +1,4 @@
+La raison pour laquelle le choix s'est porté sur une Base De Données, est dû au fait qu'il y a des relations au sein des tables ( Clés primaires, clés étrangères ),
+dans une BDD non relationnelles le lien n'est pas effectués. Cela se vérifie surtout lors de l'accessibilité et l'utilisation (modification,insertion...)
+des données d'une table, surtout pendant l'intéraction des tables.
+Voici la raison pour laquelle l'équipe de Léa a préféré utiliser une BDD relationnelle.

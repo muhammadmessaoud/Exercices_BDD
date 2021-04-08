@@ -56,7 +56,7 @@ ENGINE INNODB,DEFAULT CHARACTER SET utf8mb4;
 --Table habitant
 
 CREATE TABLE habitant (
-num_habitant INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+num_hab INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
    nom VARCHAR(30),
     age INT,
     num_qualite INT,  
@@ -72,9 +72,9 @@ ENGINE INNODB,DEFAULT CHARACTER SET utf8mb4;
 
 CREATE TABLE fabriquer (
 num_potion INT ,
-    num_habitant INT ,  
-    PRIMARY KEY (num_potion , num_habitant),
-    CONSTRAINT FOREIGN KEY (num_habitant) REFERENCES habitant(num_habitant),
+    num_hab INT ,  
+    PRIMARY KEY (num_potion , num_hab),
+    CONSTRAINT FOREIGN KEY (num_hab) REFERENCES habitant(num_hab),
     CONSTRAINT FOREIGN KEY (num_potion) REFERENCES potion(num_potion)
 )
 ENGINE INNODB,DEFAULT CHARACTER SET utf8mb4;
@@ -85,11 +85,11 @@ ENGINE INNODB,DEFAULT CHARACTER SET utf8mb4;
 
 CREATE TABLE absorber (
 num_potion INT ,
-    num_habitant INT ,  
+    num_hab INT ,  
     date_a DATETIME,
     quantite INT,
-    PRIMARY KEY AUTO_INCREMENT(num_potion , num_habitant,date_a),
-    CONSTRAINT FOREIGN KEY (num_habitant) REFERENCES habitant(num_habitant),
+    PRIMARY KEY AUTO_INCREMENT(num_potion , num_hab,date_a),
+    CONSTRAINT FOREIGN KEY (num_hab) REFERENCES habitant(num_hab),
     CONSTRAINT FOREIGN KEY (num_potion) REFERENCES potion(num_potion)
 )
 ENGINE INNODB,DEFAULT CHARACTER SET utf8mb4;
@@ -134,7 +134,7 @@ num_trophee INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     num_resserre INT,
     CONSTRAINT FOREIGN KEY (code_cat) REFERENCES categorie(code_cat),
     CONSTRAINT FOREIGN KEY (num_resserre) REFERENCES resserre(num_resserre),
-    CONSTRAINT FOREIGN KEY (num_preneur) REFERENCES habitant(num_habitant)
+    CONSTRAINT FOREIGN KEY (num_preneur) REFERENCES habitant(num_hab)
 )
 ENGINE INNODB,DEFAULT CHARACTER SET utf8mb4;
 
